@@ -19,10 +19,21 @@ CREATE TABLE `table_name` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='Cadastro de Pessoas';
 
+CREATE TABLE `Produtos` (
+  `idProduct` bigint(20) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `preco` INT NOT NULL,
+  `quantidadeEstoque` varchar(150) DEFAULT NULL,
+  `descricao` varchar(2000) DEFAULT NULL COMMENT,
+  PRIMARY KEY (`idProduct`)
+)
+
+
 -- Inserção de dados de exemplo
 INSERT INTO table_name (name, telefone, endereco, imagem_perfil) VALUES
 ('João Silva', '(31) 91234-5678', 'Rua das Flores, 123', 'https://imagem.com/perfil.png'),
 ('Maria Oliveira', '(31) 99887-1234', 'Avenida Central, 456', 'https://imagem.com/perfil2.png');
+
 
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

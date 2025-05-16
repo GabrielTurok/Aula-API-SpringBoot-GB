@@ -1,5 +1,5 @@
 // Pacote onde a classe está localizada
-package com.example.cadastro_pessoas.servicer;
+package com.example.cadastro_pessoas.service;
 
 // Importações necessárias para manipulação de listas e objetos opcionais
 import java.util.List;

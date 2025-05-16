@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping; // Mapeia o camin
 import org.springframework.web.bind.annotation.RestController; // Indica que esta classe é um Controller REST
 
 import com.example.cadastro_pessoas.model.PessoasModel;
-import com.example.cadastro_pessoas.servicer.PessoasService;
+import com.example.cadastro_pessoas.service.PessoasService;
 
 // Anotação que define esta classe como um Controller REST
 @RestController
