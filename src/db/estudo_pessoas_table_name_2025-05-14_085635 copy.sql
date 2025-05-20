@@ -19,13 +19,21 @@ CREATE TABLE `table_name` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='Cadastro de Pessoas';
 
-CREATE TABLE `Produtos` (
-  `idProduct` bigint(20) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
-  `preco` INT NOT NULL,
-  `quantidadeEstoque` varchar(150) DEFAULT NULL,
-  `descricao` varchar(2000) DEFAULT NULL COMMENT,
-  PRIMARY KEY (`idProduct`)
+CREATE TABLE `Compras` (
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `dataCompra` timestamp NOT NULL DEFAULT current_timestamp(),
+  `pessoa_id` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+)
+
+CREATE TABLE `ItensCompra` (
+  `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `compra_id` BIGINT(20) NOT NULL,
+  `produto_id` BIGINT(20) NOT NULL,
+  `quantidade` BIGINT(20),
+  `precoUnitario` DOUBLE(200),
+  FOREIGN KEY(`pessoas`) REFERENCES `table_name`(`id`)
+  PRIMARY KEY (`id`)
 )
 
 
