@@ -15,15 +15,15 @@ CREATE TABLE `table_name` (
   `name` varchar(255) NOT NULL,
   `telefone` varchar(15) DEFAULT NULL COMMENT 'Telefone no formato XXXXXXXXXXX',
   `endereco` varchar(150) DEFAULT NULL COMMENT 'Endereço Completo',
-  `imagem_perfil` varchar(2083) DEFAULT NULL COMMENT 'URL da Imagem de Perfil',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='Cadastro de Pessoas';
+) 
 
 CREATE TABLE `Compras` (
   `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
   `dataCompra` timestamp NOT NULL DEFAULT current_timestamp(),
   `pessoa_id` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
+  FOREIGN KEY (`pessoa_id`) REFERENCES `table_name`(`id`)
 )
 
 CREATE TABLE `ItensCompra` (
@@ -32,8 +32,8 @@ CREATE TABLE `ItensCompra` (
   `produto_id` BIGINT(20) NOT NULL,
   `quantidade` BIGINT(20),
   `precoUnitario` DOUBLE(200),
-  FOREIGN KEY(`pessoas`) REFERENCES `table_name`(`id`)
   PRIMARY KEY (`id`)
+  FOREIGN KEY(`compra_id`) REFERENCES `table_name`(`id`)
 )
 
 
